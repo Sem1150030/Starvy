@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
 @import 'tailwindcss';
 @import '../../vendor/livewire/flux/dist/flux.css';
 
@@ -9,7 +10,16 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Fredoka', ui-sans-serif, system-ui, sans-serif;
+
+    /* Ocean theme — kid-friendly palette. Change here to re-theme; never hardcode in markup. */
+    --color-ink: #173A45;
+    --color-teal: #14B8B0;
+    --color-aqua: #29B6E8;
+    --color-seafoam: #2DD4A8;
+    --color-ocean: #3B82F6;
+    --color-muted: #6E96A0;
 
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;
@@ -64,3 +74,35 @@ select:focus[data-flux-control] {
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
+
+/* ── Ocean theme: page chrome + reusable helpers ───────────────── */
+
+.ocean-bg {
+    color: var(--color-ink);
+    background:
+        radial-gradient(120% 120% at 50% -10%, #CDEFF0 0%, #E8F8FA 45%, #FFFFFF 100%)
+        fixed;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, #22D3C5, #1FA2D6, #2A6FE0);
+}
+
+/* Headings + buttons use the rounded, playful display face. */
+.display { font-family: var(--font-display); }
+
+/* Gentle hover lift on tappable cards. */
+.pop { transition: transform .15s ease; }
+.pop:hover { transform: translateY(-4px) rotate(-.5deg); }
+
+/* Floating mascot. */
+.float { animation: float 3.5s ease-in-out infinite; }
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-6deg); }
+    50% { transform: translateY(-10px) rotate(6deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .float { animation: none; }
+    .pop:hover { transform: none; }
+}
