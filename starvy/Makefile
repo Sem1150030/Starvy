@@ -1,4 +1,6 @@
 run:
+	npm run build
+	npm run dev
 	php artisan serve
 
 queue:
@@ -11,4 +13,4 @@ migrate:
 	php artisan migrate
 
 reset:
-	php artisan migrate:reset
+	php artisan migrate:fresh --seed
