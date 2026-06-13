@@ -1,3 +1,4 @@
+
 ---
 name: starvy-styling
 description: Use when generating or editing any student-facing UI, Blade view, Flux component, or Tailwind/CSS in the Starvy learning platform — the kid-friendly "Ocean" design system. Triggers include building dashboards, subject cards, lesson screens, buttons, progress bars, reward counters (stars/streaks), or any markup a child will see.
